@@ -1,25 +1,50 @@
-import { List } from '@mui/material'
-import React, {useState} from 'react'
-import { portfolio } from '../common/data/dummydata'
+import { List } from '@mui/material';
+import React, {useState} from 'react';
+import { portfolio } from '../common/data/dummydata';
+import Visibility from '@mui/icons-material/Visibility';
+import { Heading } from '../common/Heading';
 
+const allCategory = ["all", ...new Set(portfolio.map((item) => item.category))]
 export const Portofolio = () => {
-  const [list, setList] = useState(portfolio)
+  const [list, setLists] = useState(portfolio)
+  const [category, setCategory] = useState(allCategory)
+
+  const filterItems = (category) => {
+    const newItems = portfolio.filter((items) => items.category === category)
+    setLists(newItems)
+
+    if(category === "all"){
+      setLists(portfolio)
+    }
+  }
   return (
     <>
      <article>
-      <div className="container">
-        <div className="catButton">text</div>
-        </div>
-      <div className="content grid3">
-        {list.map((items) => (
-          <div className="box">
-            <div className="img">
-              <img src={items.cover} alt="" />
-            </div>
+        <div className="container">
+            <Heading title = "Portofolio" />
+          <div className="catButton">
+            {category.map((category) => (
+              <button className='primaryBtn' onClick={() => filterItems(category)}>
+                {category}
+              </button>
+            ))}
           </div>
-        ))}
-      </div>
-     </article>
+          <div className="content grid3">
+            {list.map((items) => (
+              <div className="box" key={items.id}>
+                <div className="img">
+                  <img src={items.cover} alt={items.title} />
+                </div>
+                <div className="overlay">
+                  <h3>{items.title}</h3>
+                  <span>{items.name}</span>
+                  <Visibility />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </article>
     </>
-  )
-}
+  );
+};
