@@ -2,9 +2,9 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import { Header } from "../common/Header";
 import { Home } from "../home/Home";
-import { About } from "./About";
+import { About } from "./about";
 import { Services } from "../home/services";
-import { Portofolio } from "./Portofolio";
+import { Portofolio } from "./portofolio";
 
 
 export const Pages = () => {
