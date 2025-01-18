@@ -9,8 +9,8 @@ export const About = () => {
         <div className='container flex'>
             {about.map((val,i) => (
                 <>
-                <div className="left" data-aos='fade-down-right'>
-                    <img src={val.cover} alt="" />
+                <div className="left">
+                    <img src={val.cover} alt="" data-aos='fade-down-right' />
                 </div>
                 <div className="right" data-aos='fade-down-left'>
                     <Heading title='About Me' />

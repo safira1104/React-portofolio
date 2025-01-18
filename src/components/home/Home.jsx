@@ -5,6 +5,9 @@ import { Services } from "./services"
 import { Counter } from "../pages/Counter"
 import { Portofolio } from "../pages/portofolio"
 import { Testimonials } from "../pages/testimonials"
+import { Blog } from "../pages/blog"
+import { Contact } from "../pages/contact"
+import { Footer } from "../common/footer"
 
 export const Home = () => {
   return (
@@ -15,6 +18,8 @@ export const Home = () => {
       <Counter />
       <Portofolio />
       <Testimonials />
+      <Blog />
+      <Contact />
     </>
   )
 }

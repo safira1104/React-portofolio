@@ -315,3 +315,79 @@ label{
 
 }
 /*----------portfolio-------------*/
+/*----------blog-------------*/
+.blog img{
+  width: 100%;
+}
+.blog .box{
+  background-color: var(--primaryBackground);
+  border-radius: 10px;
+}
+.blog .text {
+  padding: 10px 30px;
+
+}
+/*----------blog-------------*/
+/*----------contact-------------*/
+.contact {
+  margin: 20px 0;
+}
+.contact .right,
+.contact .left{
+  padding: 20px;
+}
+.contact .flex input:nth-child(1){
+  margin-right: 10px;
+}
+.contact button,
+.contact textarea,
+.contact input{
+    width: 100%;
+    padding: 20px;
+    border: none;
+    outline: none;
+    margin: 10px 0;
+    border-radius: 5px; 
+}
+/*----------contact-------------*/
+/*----------footer-------------*/
+footer{
+  text-align: center;
+  background-color: var(--primaryBackground);
+  padding: 70px;
+  margin-top: 50px;
+}
+footer i{
+  margin: 5px;
+  color: var(--primaryColor);
+}
+/*----------footer-------------*/
+@media screen and (max-width: 768px) {
+  .hero{
+    height: 60vh;
+  }
+  .heroContainer{
+    min-width: 80%;
+  }
+  .hero::after{
+    height: 60vh;
+  }
+  section{
+    height: auto;
+    padding-top: 50px;
+  }
+  .contact .flexsb,
+  .about .flex{
+    flex-direction: column;
+  }
+  .left, .right{
+    width: 100%;
+  }
+  .grid3, .grid4{
+    grid-template-columns: repeat(2,1fr);
+  }
+  article{
+    margin: 0;
+    padding-bottom: 50px; 
+  }
+}

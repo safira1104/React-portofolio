@@ -5,16 +5,17 @@ import logo from "./data/image/logo.png";
 import { Menu } from "@mui/icons-material";
    
 export const Header = () => {
-  const [Responsive,setResponsive] = useState(false)
+  const [responsive,setResponsive] = useState(false)
   return ( 
+    <>
     <header >
      <div className="container flexsb">
           <div className="logo">
-            <img src={logo} alt="" />
+            <img src={logo} alt="" data-aos="zoom-in-right" />
           </div>
-        <div className={Responsive ? "hideMenu" : "nav"}>
+        <div className={responsive ? "hideMenu" : "nav"}>
           {navlink.map((link, i) => (
-            <Link to={link.url} key={i}>
+            <Link to={link.url} key={i} data-aos="zoom-in-left">
               {link.text}
             </Link>
           ))}
@@ -24,5 +25,6 @@ export const Header = () => {
         </button>
      </div>
     </header>
+    </>
   );
 };
